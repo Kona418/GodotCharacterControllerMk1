@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwj8jy0mb438u"]
+
+[ext_resource type="Material" uid="uid://x3ynblbivnfl" path="res://materials/physics_object_material.tres" id="1_6jttb"]
+[ext_resource type="PhysicsMaterial" uid="uid://1yvwh3fkfrla" path="res://materials/interactive_physics_material.tres" id="1_e7nwn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_318ys"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_318ys"]
+
+[node name="PhysicsBall" type="RigidBody3D"]
+physics_material_override = ExtResource("1_e7nwn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_318ys")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_6jttb")
+mesh = SubResource("SphereMesh_318ys")

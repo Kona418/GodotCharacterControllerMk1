@@ -1,0 +1,96 @@
+[gd_scene load_steps=15 format=3 uid="uid://bwwcy5hl2tk4x"]
+
+[ext_resource type="Material" uid="uid://c52341o0q1pvi" path="res://materials/floor_material.tres" id="1_2n58o"]
+[ext_resource type="PackedScene" uid="uid://4t4ws3g6gj24" path="res://levels/objects/static/static_cube_1x1.tscn" id="2_71kry"]
+[ext_resource type="PackedScene" uid="uid://r74gaqwcqsmo" path="res://levels/objects/static/static_cube_2x2.tscn" id="3_aqob7"]
+[ext_resource type="PackedScene" uid="uid://ddcr54b0e2omw" path="res://levels/objects/static/static_cube_3x3.tscn" id="4_thp0t"]
+[ext_resource type="PackedScene" uid="uid://bk26h7oejs7d0" path="res://levels/objects/static/static_platform_1x5.tscn" id="5_b3jm5"]
+[ext_resource type="PackedScene" uid="uid://y712jn0cu6j" path="res://levels/objects/static/static_ramp_1x5.tscn" id="6_upmp1"]
+[ext_resource type="PackedScene" uid="uid://cuabiqn88p2p6" path="res://levels/objects/static/static_platform_3x3.tscn" id="7_aqob7"]
+[ext_resource type="PackedScene" uid="uid://ckcsbrbhvqvhd" path="res://levels/objects/static/static_platform_3x5.tscn" id="8_thp0t"]
+[ext_resource type="PackedScene" uid="uid://bwj8jy0mb438u" path="res://levels/objects/physics/physics_ball.tscn" id="9_b3jm5"]
+[ext_resource type="PackedScene" uid="uid://bov6wme6vx3gv" path="res://levels/objects/static/static_wall_10.tscn" id="10_upmp1"]
+[ext_resource type="PackedScene" uid="uid://bxj8stcjbun5l" path="res://levels/objects/static/static_wall_5.tscn" id="11_5dpqp"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vsqtk"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_bpffr"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dm0pi"]
+material = ExtResource("1_2n58o")
+size = Vector2(50, 50)
+
+[node name="Level01" type="StaticBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_vsqtk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("WorldBoundaryShape3D_bpffr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_dm0pi")
+
+[node name="StaticCube" parent="." instance=ExtResource("2_71kry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.501, 0)
+
+[node name="StaticCube2" parent="." instance=ExtResource("3_aqob7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.002, 3)
+
+[node name="StaticCube3" parent="." instance=ExtResource("4_thp0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.502, 7)
+
+[node name="StaticPlattform1x1" parent="." instance=ExtResource("5_b3jm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 10)
+
+[node name="StaticPlattform1x2" parent="." instance=ExtResource("6_upmp1")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, 4, 10)
+
+[node name="StaticPlattform1x3" parent="." instance=ExtResource("7_aqob7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 5, 10)
+
+[node name="StaticPlattform1x4" parent="." instance=ExtResource("8_thp0t")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7, 5, 4)
+
+[node name="PhysicsBall" parent="." instance=ExtResource("9_b3jm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.066972, 5.702984, 4.383404)
+
+[node name="PhysicsBall2" parent="." instance=ExtResource("9_b3jm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4572754, 5.7029834, 2.8781853)
+
+[node name="PhysicsBall3" parent="." instance=ExtResource("9_b3jm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3225293, 5.702984, 5.1122513)
+
+[node name="PhysicsBall4" parent="." instance=ExtResource("9_b3jm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5288315, 4.033297, 1.4180222)
+
+[node name="PhysicsBall5" parent="." instance=ExtResource("9_b3jm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06501174, 3.0008836, 0.25791883)
+
+[node name="PhysicsBall6" parent="." instance=ExtResource("9_b3jm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.82062674, 5.7027955, 0.039138794)
+
+[node name="PhysicsBall7" parent="." instance=ExtResource("9_b3jm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3144927, 4.033297, -0.10069084)
+
+[node name="PhysicsBall8" parent="." instance=ExtResource("9_b3jm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8979082, 4.033297, 0.0024137497)
+
+[node name="StaticWall5" parent="." instance=ExtResource("10_upmp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -3)
+
+[node name="StaticWall6" parent="." instance=ExtResource("11_5dpqp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10, 1.5, 0)
+
+[node name="StaticWall7" parent="." instance=ExtResource("10_upmp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -5)
+
+[node name="StaticWall8" parent="." instance=ExtResource("11_5dpqp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7, 1.5, -4)
+
+[node name="StaticWall9" parent="." instance=ExtResource("10_upmp1")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 5, 6)
+
+[node name="StaticWall10" parent="." instance=ExtResource("11_5dpqp")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 5, 3.139)
+
+[node name="StaticPlattform1x5" parent="." instance=ExtResource("7_aqob7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 1.5)

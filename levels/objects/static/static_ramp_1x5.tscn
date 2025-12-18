@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://y712jn0cu6j"]
+
+[ext_resource type="Material" uid="uid://b68oh0naxla64" path="res://materials/static_object_material.tres" id="1_n6qdm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yxbeo"]
+size = Vector3(5, 0.25, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yxbeo"]
+material = ExtResource("1_n6qdm")
+size = Vector3(5, 0.25, 1)
+
+[node name="StaticPlattform1x1" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.9238795, -0.38268346, 0, 0.38268346, 0.9238795, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_yxbeo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9238795, -0.38268346, 0, 0.38268346, 0.9238795, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_yxbeo")
